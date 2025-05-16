@@ -1,13 +1,13 @@
-function switchTab(tabId) {
-  const tabs = document.querySelectorAll(".tab");
-  const contents = document.querySelectorAll(".tab-content");
+// function switchTab(tabId) {
+//   const tabs = document.querySelectorAll(".tab");
+//   const contents = document.querySelectorAll(".tab-content");
 
-  tabs.forEach((tab) => tab.classList.remove("active"));
-  contents.forEach((content) => content.classList.remove("active"));
+//   tabs.forEach((tab) => tab.classList.remove("active"));
+//   contents.forEach((content) => content.classList.remove("active"));
 
-  document.querySelector(`.tab[onclick*="${tabId}"]`).classList.add("active");
-  document.getElementById(tabId).classList.add("active");
-}
+//   document.querySelector(`.tab[onclick*="${tabId}"]`).classList.add("active");
+//   document.getElementById(tabId).classList.add("active");
+// }
 
 function calculateForward() {
   const dpPrice = parseFloat(document.getElementById("dpPrice").value);
@@ -15,8 +15,8 @@ function calculateForward() {
     document.getElementById("offlinePrice").textContent = "-";
     document.getElementById("onlinePrice").textContent = "-";
     document.getElementById("retailPrice").textContent = "-";
-    document.getElementById("twentypPrice").textContent = "-";
-    document.getElementById("twentyPrice").textContent = "-";
+    // document.getElementById("twentypPrice").textContent = "-";
+    // document.getElementById("twentyPrice").textContent = "-";
     return;
   }
 
