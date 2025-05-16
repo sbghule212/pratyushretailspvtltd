@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Majalgaon Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <!--   <h1>Majalgaon Store</h1> -->
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('forward')">
+        DP > Offer
+      </button>
+      <button class="tab" onclick="switchTab('reverse')">Offer > DP</button>
+      <button class="tab" onclick="switchTab('message')">Post</button>
+    </div>
+
+    <!-- Forward Calculator -->
+   <div id="forward" class="tab-content active">
+      <label for="dpPrice">Enter Dp Price:</label>
+      <input
+        type="number"
+        id="dpPrice"
+        placeholder="Enter DP price"
+        oninput="calculateForward()" />
+      <div class="output">
+        <p><strong>Offline Price:</strong> <span id="offlinePrice">-</span></p>
+        <p style="margin-block-end: 0">
+          <strong>Online Price:</strong> <span id="onlinePrice">-</span>
+        </p>
+        <p><strong>MRP:</strong> <span id="retailPrice">-</span></p>
+        <p><strong>20% Discount:</strong> <span id="twentypPrice">-</span>, <span id="twentyPrice">-</span></p>
+      </div>
+    </div>
+
+    <!-- Reverse Calculator -->
+    <div id="reverse" class="tab-content">
+      <label for="onlineInput">Enter Online Price:</label>
+      <input
+        type="number"
+        id="onlineInput"
+        placeholder="Enter online price"
+        oninput="calculateReverse()"
+      />
+      <div class="output">
+        <p><strong>Approx. DP Price:</strong> <span id="revRetail">-</span></p>
+        <p><strong>Approx. Dp Price:</strong> <span id="revDpPrice">-</span></p>
+      </div>
+    </div>
+
+    <!-- Post Generator -->
+    <div id="message" class="tab-content">
+      <label for="storeInput">Mega Store Name:</label>
+      <input
+        type="text"
+        id="storeInput"
+        placeholder="Majalgaon Mega Store"
+        oninput="generateMessage()"
+      />
+
+      <label for="productInput">Product Name:</label>
+      <input
+        type="text"
+        id="productInput"
+        placeholder="Jewellery"
+        oninput="generateMessage()"
+      />
+
+      <label for="dpInput">DP Price:</label>
+      <input
+        type="number"
+        id="dpInput"
+        placeholder="1199"
+        oninput="generateMessage()"
+      />
+
+      <label for="contactInput">Contact Number:</label>
+      <input
+        type="text"
+        id="contactInput"
+        placeholder="7775034111"
+        oninput="generateMessage()"
+      />
+
+      <div style="margin-top: 0px">
+        <label>Distributor Post:</label>
+        <textarea
+          id="messageOutput1"
+          rows="10"
+          readonly
+          style="
+            width: 93%;
+            background: var(--card-bg);
+            color: var(--white);
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+          "
+        ></textarea>
+        <button
+          onclick="copyMessage('messageOutput1')"
+          style="
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: var(--main-bg);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+          "
+        >
+          Copy Distributor Post
+        </button>
+
+        <!--   <label style="margin-top:20px; display:block;">Customer Post:</label>
+  <textarea id="messageOutput2" rows="1" readonly style="width:93%; background:var(--card-bg); color:var(--white); padding:10px; font-size:16px; border-radius:8px; border:1px solid #ccc;"></textarea>
+  <button onclick="copyMessage('messageOutput2')" style="margin-top:10px; padding:10px 20px; background:var(--main-bg); color:var(--white); border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+    Copy Customer Post
+  </button> -->
+      </div>
+      <label style="margin-top: 25px; display: block">Sale Report:</label>
+      <label>Saree Sale:</label>
+      <input type="number" id="sareeSaleInput" oninput="generateMessage()" />
+
+      <label>Jewellery/Purse Sale:</label>
+      <input type="number" id="otherSaleInput" oninput="generateMessage()" />
+
+      <label>Today’s Expenses:</label>
+      <input type="number" id="expensesInput" oninput="generateMessage()" />
+
+      <textarea
+        id="messageOutput3"
+        rows="9"
+        readonly
+        style="
+          width: 93%;
+          padding: 10px;
+          background: var(--card-bg);
+          color: var(--white);
+          font-size: 16px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+        "
+      ></textarea>
+      <button
+        onclick="copyMessage('messageOutput3')"
+        style="
+          margin-top: 10px;
+          padding: 10px 20px;
+          background: var(--main-bg);
+          color: var(--white);
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+        "
+      >
+        Copy Sale Report
+      </button>
+    </div>
+
+    <footer
+      style="
+        margin-top: auto;
+        text-align: center;
+        padding: 20px 10px;
+        color: #888;
+        font-size: 0.9rem;
+      "
+    >
+      Created by Shivraj Ghule
+      <p>Majalgaon Store</p>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

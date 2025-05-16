@@ -1,0 +1,116 @@
+:root {
+  --primary-color: #4caf50;
+  --bg-color: #f0f0f0;
+  --card-bg: #ffffff;
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --White: hsl(0, 0%, 100%);
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--White);
+  padding-inline: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 4rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  border: none;
+  background: none;
+  outline: none;
+  transition: color 0.3s;
+}
+
+.tab.active {
+  color: var(--white);
+  border-bottom: 3px solid var(--white);
+}
+
+.tab-content {
+  box-sizing: border-box;
+  display: none;
+  width: 100%;
+  max-width: 450px;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-block: 10px;
+  box-sizing: border-box;
+  background-color: var(--card-bg);
+  color: var(--white);
+}
+
+input[type="number"]:focus {
+  border: 3px solid var(--card-bg);
+}
+
+.output p {
+  font-size: 18px;
+  margin: 1rem 0;
+}
+
+.output span {
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .output p {
+    font-size: 16px;
+  }
+}
